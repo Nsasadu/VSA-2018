@@ -8,9 +8,18 @@
 # #Then, it prints out a sentence that says the number of years until they graduate.
 #
 user_name = raw_input("Enter your name: ")
-user_grade = raw_input("Enter the grade level you will be going into: ")
+user_grade = raw_input("Enter the grade level you just finished of school: ")
 
-print "You will graduate from high school in", 13 - int(user_grade), "years!"
+if int(user_grade) < 11:
+    print "You will graduate from high school in", 12 - int(user_grade), "years!"
+if int(user_grade) == 11:
+    print "You will graduate from high school in 1 year!"
+if int(user_grade) == 12:
+    print "You have graduated!"
+if int(user_grade) < 1 or 12 < int(user_grade) < 69 or 69 < int(user_grade) < 420 or 420 < int(user_grade):
+    print "Those are not real grade levels dummy"
+if int(user_grade) == 69 or int(user_grade) == 420:
+    print "Are we really doing this? Don't you have better things to do with your time?"
 
 
 # # Part II:
@@ -44,6 +53,8 @@ if int(user_age) == 21 or int(user_age) > 21:
     print "You can legally buy alcohol."
 elif int(user_age) < 21:
     print "You cannot buy alcohol."
+if int(user_age) == 420:
+    print "You can buy a gun to shoot yourself with funny guy"
 
 #user_name1 = raw_input("Enter your name: ")
 user_bmonth = raw_input("Enter the month you were born: ")
@@ -64,5 +75,7 @@ if int(user_bmonth) > int(current_month) and int(user_bday) < int(current_day):
 if int(user_bmonth) == int(current_month) and int(user_bday) < int(current_day):
     print "Your birthday is in 11 months and", 30 - (int(current_day) - int(
         user_bday)) + (int(user_bmonth) - int(current_month))- 1, "day(s)!"
+if int(user_bmonth) == int(current_month) and int(user_bday) > int(current_day):
+    print "Your birthday is in", int(user_bday) - int(current_day), "day(s)!"
 #user_age1 = raw_input("Enter your age: ")
 
