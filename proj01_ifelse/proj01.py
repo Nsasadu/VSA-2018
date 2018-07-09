@@ -24,6 +24,8 @@ if int(user_age) > 16:
     print "You can drive!"
 elif int(user_age) == 16:
     print "You can drive in some states!"
+elif int(user_age) > 95:
+    print "You are too old to drive"
 else:
     print "You cannot drive"
 
@@ -52,4 +54,11 @@ if 13 < int(user_age) < 17:
     print "You may watch PG-13 rated movies."
 if int(user_age) == 17 or int(user_age) > 17:
     print "You may watch R rated movies."
-
+if int(user_age) == 18 or int(user_age) > 18:
+    print "You can legally vote."
+elif int(user_age) < 18:
+    print "You cannot vote."
+if int(user_age) == 21 or int(user_age) > 21:
+    print "You can legally buy alcohol."
+elif int(user_age) < 21:
+    print "You cannot buy alcohol."
