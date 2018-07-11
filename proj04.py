@@ -15,16 +15,14 @@ practice with lists
 a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
 #and write a program that prints out all the elements of the list that are less than 5.
 
-# value = []
-# counter = 0
-# for item in a:
-#     if item < 5:
-#         print a[counter]
-#         value.append(a[counter])
-#         counter = counter + 1
-# print value
-
-
+value = []
+counter = 0
+valuea = list(set(a))
+for item in a:
+    if item < 5:
+        value.append(valuea[counter])
+        counter = counter + 1
+print value
 
 
 
@@ -32,52 +30,52 @@ a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
 
 #Part II
 # Take two lists, say for example these two:
-# b = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
-# c = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+b = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+c = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 # # and write a program that creates and prints a list that contains only the elements
 # # that are common between the lists (without duplicates).
 # # Make sure your program works on two lists of different sizes.
 #
 #
-# valuebc = []
-# counter = 0
-# valueb = list(set(b))
-# valuec = list(set(c))
-# for item in valueb:
-#     if item in c:
-#         valuebc.append(valueb[counter])
-#     counter = counter + 1
-# print valuebc
+valuebc = []
+counter = 0
+valueb = list(set(b))
+valuec = list(set(c))
+for item in valueb:
+    if item in c:
+        valuebc.append(valueb[counter])
+    counter = counter + 1
+print valuebc
 
 
-# import random
-# list1 = []
-# list2 = []
-# list3 = []
-# counter = 0
-# listlength = random.randint(1,20)
-# while counter < listlength:
-#     num1 = random.randint(1,50)
-#     list1.append(num1)
-#     counter = counter + 1
-# print "List 1 values", list1
-#
-# counter = 0
-# listlength = random.randint(1,20)
-# while counter < listlength:
-#     num2 = random.randint(1,50)
-#     list2.append(num2)
-#     counter = counter + 1
-# print "List 2 values", list2
-#
-# counter = 0
-# value1 = list(set(list1))
-# value2 = list(set(list2))
-# for item in value1:
-#     if item in value2:
-#         list3.append(value1[counter])
-#     counter = counter + 1
-# print list3
+import random
+list1 = []
+list2 = []
+list3 = []
+counter = 0
+listlength = random.randint(1,20)
+while counter < listlength:
+    num1 = random.randint(1,50)
+    list1.append(num1)
+    counter = counter + 1
+print "List 1 values", list1
+
+counter = 0
+listlength = random.randint(1,20)
+while counter < listlength:
+    num2 = random.randint(1,50)
+    list2.append(num2)
+    counter = counter + 1
+print "List 2 values", list2
+
+counter = 0
+value1 = list(set(list1))
+value2 = list(set(list2))
+for item in value1:
+    if item in value2:
+        list3.append(value1[counter])
+    counter = counter + 1
+print list3
 
 #Part III
 # Take a list, say for example this one:
