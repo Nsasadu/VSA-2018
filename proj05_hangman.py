@@ -52,6 +52,7 @@ word = wordlist[random.randint(1, 55901)]
 word_list = list(word)
 word_length = int(len(word_list))
 blanks = []
+guess_list = []
 while counter2 < word_length:
     blanks.append("_")
     counter2 = counter2 + 1
@@ -68,11 +69,24 @@ while counter > 0:
     while counter1 < word_length:
         if guess == word_list[counter1]:
             blanks[counter1] = guess
-        elif guess != word_list[1]:
-            counter = counter - 1
         counter1 = counter1 + 1
         while counter3 < 26:
             if guess == alpha[counter3]:
                 alpha[counter3] = ""
+                print "Good Guess."
             counter3 = counter3 + 1
+    if guess in guess_list:
+        print "You already guessed this letter. Try again."
     print " ".join(blanks)
+    if guess not in word_list:
+        counter = counter - 1
+        print "But that letter is not in my word hecken moron."
+    guess_list.append(guess)
+    if word_list == blanks:
+        print "Congratulations! You guessed the word", word, "correctly! You're not incompetent."
+        break
+if counter == 0:
+    print "Wow, you can't even guess a simple word like " + word + "? You must be the kind of idiot that says 'your' " \
+                                                                   "instead of 'you're'."
+
+
