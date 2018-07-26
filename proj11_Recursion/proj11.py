@@ -3,6 +3,30 @@
 # Name:
 # Date:
 
+# def print_x_times(x, string):
+#     # base case
+#     if x == 1:
+#         print x, " ", string
+#     # all other cases
+#     else:
+#         print x, " ", string
+#         # recursive call to self
+#         print_x_times(x-1, string)
+# print_x_times(8, "cat")
+
+# def palindrome(string):
+#     # base case
+#     if len(string) <= 1:
+#         print "Yes"
+#     # other cases
+#     elif string[0] != string[-1]:
+#         print "No"
+#         return False
+#     else:
+#         # recursive call to self
+#         palindrome(string[1:-1])
+# palindrome("hello")
+
 # Tests are created for you in proj11_test.py. Uncomment tests as you need them.
 # Otherwise, you could call a function that you haven't defined yet, and you would get an error.
 #
@@ -10,16 +34,32 @@
 # Task: compute the sum of a list of integers
 # Pre: lst is an list of 'size' integers, size is nonnegative
 # Post: the sum of lst[0]...lst[size-1] is returned
-# Challenge: This function could be done by dividing the list in half and performing recursive calls on each half (as opposed to just shrinking the size by one each time).
+# Challenge: This function could be done by dividing the list in half and performing recursive calls on each half
+# (as opposed to just shrinking the size by one each time).
 
-
+def sumList(lst):
+    counter = 0
+    while counter <= 10000:
+        if len(lst) <= 0:
+            return 0
+        elif len(lst) == 1:
+            return lst[0]
+        else:
+            print lst
+            lst[-1] = lst[0] + lst[-1]
+            lst.pop(0)
+            sumList(lst)
+            counter += 1
 
 # member(target, set);
 # Task: determine if target is in the set
 # Pre: set is an list of 'size' integers, size is nonnegative
 # Post: true is returned if target is in the set, else false; the set is unchanged
 
-
+def member(target, set):
+    for item in set:
+        if item == target:
+            return True
 
 # addStar(str);
 # Given a string, compute recursively a new string where all the adjacent characters are now separated by a "*".
@@ -30,7 +70,21 @@
 # addStar("abc") --> "a*b*c"
 # addStar("ab") --> "a*b"
 
-
+def addStar(str):
+    if len(str) == 0 or len(str) == 1:
+        return str
+    lst = []
+    counter = 0
+    for letter in str:
+        lst.append(letter)
+    while counter <= (len(lst)-2):
+        print lst
+        print counter
+        lst.insert((counter + 1), "*")
+        counter += 2
+        print lst
+    str1 = ''.join(lst)
+    return str1
 
 # harmonicSum(n);
 # Task: compute the sum of the first n harmonic terms
@@ -38,6 +92,12 @@
 # Post: the sum of the first n harmonic terms is returned.
 # The harmonic series is 1 + (1/2) + (1/3) + (1/4) + ...
 
+def harmonicSum(n):
+    sum = 0
+    while n != 0:
+        sum = float(sum) + float((1.0/n))
+        n -= 1
+    print sum
 
 
 # isPalindrome(str);
@@ -48,6 +108,24 @@
 # You do not need to worry about trimming blanks from the ends of the string.
 # Note: the empty string is a palindrome
 
+def isPalindrome(str):
+    counter = 0
+    str = str.lower()
+    lst = []
+    for letter in str:
+        lst.append(letter)
+    for item in lst:
+        if item == " ":
+            lst[counter] = ""
+        counter += 1
+    str = ''.join(lst)
+    print str
+    if len(str) <= 1:
+        return True
+    elif str[0] != str[-1]:
+        return False
+    else:
+        isPalindrome(str[1:-1])
 
 
 # replace(target, replacement, numbers, size);
@@ -56,6 +134,15 @@
 # Post: all occurrences of 'target' in 'numbers' have been replaced  with 'replacement';
 # the number of replacements performed is returned to the caller.
 
+def replace(target, replacement, numbers, size):
+    counter = 0
+    times = 0
+    for item in numbers:
+        if item == target:
+            numbers[counter] = replacement
+            times += 1
+        counter += 1
+    return times
 
 
 # g_c_d(x, y);
@@ -70,13 +157,38 @@
 # Pre: the parameters x & y are nonnegative
 # Post: the GCD of x & y is returned
 
-
+def g_c_d(x, y):
+    play = False
+    r = 1
+    if y == 0:
+        return x
+    counter = 1
+    while play == False:
+        r = x % y
+        if r == 0:
+            return y
+        else:
+            x = y
+            y = r
+            r2 = r
+            counter += 1
 
 # void reverseLst(lst, first, last);
 # Task: reverse the contents of lst[first]...lst[last]
 # Pre: 'lst' is a list of at least 'last'+1 integers, first & last are nonnegative
 # Post: the elements lst[first]...lst[last]have been reversed.
 
+def reverseLst(lst, first, last):
+    lst.reverse()
+    print lst
+    return lst
+
+# def reverseLst(lst, first, last):
+#     if len(lst) <= 0:
+#         return lst
+#     else:
+#         lst[0], lst[-1] = lst[-1], lst[0]
+#         reverseLst(lst[1:-1], first, last)
 
 
 # convert2Binary(num);

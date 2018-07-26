@@ -6,7 +6,7 @@ from fractions import gcd
 ## Uncomment tests as you need them!
 
 """
-########### sumList ############### 
+########### sumList ###############
 
 def sumList_test(lst):
     if sumList(lst) == sum(lst):
@@ -51,6 +51,7 @@ if true_sets != [[1], [1, 2], [2, 3, 4, 1, 2], [2, 1, 3, 4], [2, 1]] or \
 
 if member_pass:
     print "member PASS\n"
+
 
 ########### addStar ############### 
 
@@ -153,7 +154,7 @@ for pair in gcd_pairs:
 
 if gcd_pass:
     print "g_c_d PASS\n"
-
+"""
 ########### reverseLst ############### 
 
 reverse_pass = True
@@ -191,7 +192,7 @@ if lst != ['a', 'b', 'e', 'd', 'c', 'f', 'g']:
 
 if reverse_pass:
     print "reverseLst PASS\n"
-
+"""
 ########### convert2Binary ############### 
 
 bin_pass = True
