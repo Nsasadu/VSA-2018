@@ -1,51 +1,19 @@
-# Name:
-# Date:
-
-
-# proj05: Hangman
-
-# -----------------------------------
-# Helper code
-# (you don"t need to understand this helper code)
 import random
 import string
 
 WORDLIST_FILENAME = "words.txt"
 
 def load_words():
-    """
-    Returns a list of valid words. Words are strings of lowercase letters.
-    
-    Depending on the size of the word list, this function may
-    take a while to finish.
-    """
-    print "Loading word list from file..."
-    # inFile: file
     inFile = open(WORDLIST_FILENAME, "r", 0)
-    # line: string
     line = inFile.readline()
-    # wordlist: list of strings
     wordlist = string.split(line)
-    print "  ", len(wordlist), "words loaded."
     return wordlist
 
 def choose_word(wordlist):
-    """
-    wordlist (list): list of words (strings)
-
-    Returns a word from wordlist at random
-    """
     return random.choice(wordlist)
 
-# end of helper code
-# -----------------------------------
-
-# actually load the dictionary of words and point to it with 
-# the wordlist variable so that it can be accessed from anywhere
-# in the program
 wordlist = load_words()
 
-# your code begins here!
 counter = 8
 counter2 = 0
 word = wordlist[random.randint(1, 55901)]
@@ -80,13 +48,12 @@ while counter > 0:
     print " ".join(blanks)
     if guess not in word_list:
         counter = counter - 1
-        print "But that letter is not in my word hecken moron."
+        print "This letter is not a part of the world."
     guess_list.append(guess)
     if word_list == blanks:
-        print "Congratulations! You guessed the word", word, "correctly! You're not incompetent."
+        print "Congratulations! You guessed the word", word, "correctly!"
         break
 if counter == 0:
-    print "Wow, you can't even guess a simple word like " + word + "? You must be the kind of idiot that says 'your' " \
-                                                                   "instead of 'you're'."
+    print "You did not guess the correct word, which was " + word + ". " 
 
 
